@@ -1,11 +1,11 @@
 from django.urls import path
-from blog.views import index, draft_posts_list, post_detail
+from blog.views import DraftPostsListView, post_detail, IndexListView
 
 
 app_name = 'blog'
 
 urlpatterns = [
-    path('', index, name='post_list'),
-    path('draft_list/', draft_posts_list, name='draft_list'),
+    path('', IndexListView.as_view(), name='post_list'),
+    path('draft_list/', DraftPostsListView.as_view(), name='draft_list'),
     path('blog/<int:year>/<int:month>/<int:day>/<slug:post>', post_detail, name='post_detail'),
 ]
