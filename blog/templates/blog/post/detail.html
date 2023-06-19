@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+{{ post.title }}
+{% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="date">
+    {% if post.status == 'PB' %}
+
+    Опубликовано {{ post.publish }} by {{ post.author }}
+
+    {% else %}
+    Создан {{ post.created }} by {{ post.author }} <br>
+    Последнее изменение {{ post.updated }} by {{ post.author }}
+
+    {% endif %}
+</p>
+{{ post.body|linebreaks }}
+{% if post.status == 'PB' %}
+<p><a class="link" href="{% url 'blog:post_list' %}">Назад</a></p>
+
+{% else %}
+<p><a class="link" href="{% url 'blog:draft_list' %}">Назад</a></p>
+
+{% endif %}
+{% endblock %}
+
+
+
