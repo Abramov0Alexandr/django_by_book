@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "django-by-book"
+version = "0.1.0"
+description = "Учебный проект, основанный на книге \"Django 4 в примерах. Разрабатывайте мощные и надежные веб-приложения на Python с нуля\""
+authors = ["Alexandr Abramov"]
+readme = "README.md"
+packages = [{include = "django_by_book"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+django = "^4.2.2"
+psycopg2-binary = "^2.9.6"
+ipython = "^8.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
