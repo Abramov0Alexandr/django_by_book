@@ -104,6 +104,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# E-mail server configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'alexandr.abramovv@gmail.com'
+EMAIL_HOST_PASSWORD = 'kbrjugwndpkvbyrv'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# Настройка вывода отправленных сообщений в тестовом режиме. Письмо отображается в консоли
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
