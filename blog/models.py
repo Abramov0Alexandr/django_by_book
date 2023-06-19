@@ -3,6 +3,16 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
+
+class DraftManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.DRAFT)
+
+
 class Post(models.Model):
 
     class Status(models.TextChoices):
@@ -18,6 +28,10 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     status = models.CharField(max_length=2, choices=Status.choices,
                               default=Status.DRAFT, verbose_name='Статус публикации')
+
+    objects = models.Manager()
+    published = PublishedManager()
+    draft = DraftManager()
 
     class Meta:
 
