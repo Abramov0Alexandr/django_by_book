@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -19,6 +20,20 @@
     <h2>Мой дачный блог</h2>
     <p>Хочешь жить и программировать на даче?<br>
         Я расскажу тебе как.</p>
+    Количество публикация в блоге {% total_posts %}.
+    <h3>Список последних опубликованных статей:</h3>
+    {% show_latest_post 3 %}
+
+    <h3>Лидеры по комментариям</h3>
+    {% get_most_commented_posts as most_commented_posts %}
+    <ul>
+        {% for post in most_commented_posts %}
+        <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
     <p><a class="link" href="{% url 'blog:post_list' %}">Опубликованные статьи</a></p>
     <p><a class="link" href="{% url 'blog:draft_list' %}">Неопубликованные статьи</a></p>
 
