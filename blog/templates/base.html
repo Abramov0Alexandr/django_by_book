@@ -17,6 +17,12 @@
     {% endblock %}
 </div>
 <div id="sidebar">
+
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'blog:post_search' %}">
+        <input type="search" class="form-control form-control-dark text-bg-dark me-2" placeholder="Поиск..."
+               aria-label="Search" name="query">
+    </form>
+
     <h2>Мой дачный блог</h2>
     <p>Хочешь жить и программировать на даче?<br>
         Я расскажу тебе как.</p>
