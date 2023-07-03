@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # E-mail server configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'alexandr.abramovv@gmail.com'
-EMAIL_HOST_PASSWORD = 'kbrjugwndpkvbyrv'
+EMAIL_HOST_PASSWORD = 'hpkirfmdshlkmomf'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
